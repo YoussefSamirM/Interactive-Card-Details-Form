@@ -103,7 +103,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 769px) {
   .container {
     flex-direction: column;
-    padding: 50px 20px !important;
+    padding: 100px 20px !important;
   }
   .content .cards > div {
     left: 50%;
