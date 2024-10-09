@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front End Mentor | Interactive Card Details Form</title>
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <div class="cards">
+          <div class="card-1">
+            <img src="images/bg-card-front.png" alt="" />
+            <div class="logo"><img src="images/card-logo.svg" alt="" /></div>
+            <div class="num card-d">0000 0000 0000 0000</div>
+            <div class="name-date">
+              <div class="name card-d">Jane Appleseed</div>
+              <div class="date">
+                <span class="months card-d">00</span>/<span class="years card-d"
+                  >00</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card-2">
+            <img src="images/bg-card-back.png" alt="" />
+            <div class="pass card-d">000</div>
+          </div>
+        </div>
+        <div class="done">
+          <img src="images/icon-complete.svg" alt="" />
+          <h2>THANK YOU!</h2>
+          <p>We've added your card details</p>
+          <button class="done-btn">Continue</button>
+        </div>
+        <div class="form">
+          <div class="card-holder">
+            <p>Cardholder Name</p>
+            <input
+              type="text"
+              class="card-name"
+              maxlength="25"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <div class="field one">Please Fill Field</div>
+          </div>
+          <div class="card-number">
+            <p>Card Number</p>
+            <input
+              type="number"
+              class="cardNumber"
+              oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+              maxlength="16"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <div class="field two">Wrong format</div>
+          </div>
+          <div class="exp-cvc">
+            <div class="exp">
+              <p>Exp. Date (MM/YY)</p>
+              <div class="month-year">
+                <input
+                  type="number"
+                  oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                  maxlength="2"
+                  class="month"
+                  placeholder="MM"
+                />
+                <input
+                  type="number"
+                  oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                  maxlength="2"
+                  class="year"
+                  placeholder="YY"
+                />
+              </div>
+            </div>
+            <div class="cvc">
+              <p>CVC</p>
+              <input
+                type="number"
+                oninput=" if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"
+                maxlength="4"
+                class="cvcs"
+                placeholder="e.g. 123"
+              />
+              <div class="cvc-to-short">CVC is too short</div>
+            </div>
+          </div>
+          <div class="field three">Can`t be blank</div>
+          <button class="formbtn">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <script src="Js/main.js"></script>
+  </body>
+</html>

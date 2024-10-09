@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:root {
+  --width: 33.5%;
+  --height: 33.5%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Space Grotesk", system-ui !important;
+}
+
+img {
+  pointer-events: none;
+}
+
+input[type="text"],
+input[type="number"] {
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Space Grotesk", system-ui !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.content {
+  width: 100%;
+}
+
+.content::before {
+  content: "";
+  background: url("../images/bg-main-desktop.png");
+  background-size: cover;
+  background-position: center;
+  width: var(--width);
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+@media (min-width: 1300px) {
+  .container {
+    margin: auto;
+  }
+}
+
+@media (max-width: 1029px) {
+  .container {
+    padding: 0 20px;
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .content .cards img {
+    width: 320px !important;
+  }
+  .content .cards .card-1 .num {
+    width: 320px !important;
+    font-size: 20px !important;
+  }
+
+  .content .cards .card-1 .name-date {
+    width: 320px !important;
+  }
+
+  .content .cards .card-2 {
+    margin-left: 25px !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    flex-direction: column;
+    padding: 50px 20px !important;
+  }
+  .content .cards > div {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 !important;
+  }
+  .content .cards > div img {
+    width: 100em;
+    max-width: none;
+  }
+  .content .cards .card-1 {
+    top: 130px;
+    z-index: 2;
+  }
+  .content .cards .card-2 .pass {
+    top: 49% !important;
+  }
+  .content .cards .card-2 {
+    top: -180px;
+  }
+  .content::before {
+    content: "";
+    background: url("../images/bg-main-mobile.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: var(--height);
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  .content .form .card-holder input,
+  .content .form .card-number input {
+    width: 90vw !important;
+  }
+  .content .form .exp-cvc {
+    width: 90vw !important;
+  }
+  .content .form .exp-cvc input {
+    width: 18vw !important;
+  }
+  .content .form .exp-cvc .cvc input {
+    width: 47vw !important;
+  }
+  .form button {
+    width: 90vw !important;
+    transition: none !important;
+  }
+  .done {
+    margin-bottom: 65px;
+    width: 100%;
+    word-break: break-all;
+  }
+  .done p {
+    word-break: break-all;
+  }
+  .done button {
+    width: 60vw !important;
+  }
+}
+
+@media (max-width: 410px) {
+  .content .cards .card-2 {
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .content .cards img {
+    width: 250px !important;
+  }
+  .content .cards .card-2 {
+    margin-top: 70px !important;
+  }
+  .content .cards .card-1 .logo img {
+    width: 50px !important;
+  }
+  .content .cards .card-1 .num {
+    width: 250px !important;
+    bottom: 40px !important;
+    font-size: 14px !important;
+  }
+  .content .cards .card-1 .name-date {
+    width: 250px !important;
+    bottom: 10px !important;
+  }
+}
+
+.content .cards img {
+  width: 380px;
+  max-width: 100%;
+}
+
+.content .cards > div {
+  position: relative;
+  z-index: 100;
+  display: flex;
+}
+
+.content .cards .card-1 .logo {
+  position: absolute;
+  top: 25px;
+  width: 95px;
+  padding-left: 25px;
+}
+
+.content .cards .card-1 .logo img {
+  width: 95px;
+  max-width: 100%;
+}
+
+.content .cards .card-1 .num {
+  position: absolute;
+  bottom: 65px;
+  font-size: 25px;
+  width: 380px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: white;
+  font-weight: 500;
+}
+
+.content .cards .card-1 .name-date {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  word-spacing: 1px;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: white;
+  width: 380px;
+}
+
+.content .cards .card-1 {
+  margin-bottom: 65px;
+  margin-left: 25px;
+  width: 100%;
+  z-index: 6;
+}
+
+.content .cards .card-2 {
+  margin-left: 80px;
+  z-index: 5;
+}
+
+.content .cards .card-2 .pass {
+  position: absolute;
+  top: 49%;
+  font-size: 20px;
+  transform: translateY(-50%);
+  font-weight: 500;
+  color: white;
+  right: 50px;
+}
+
+.content .form {
+  padding: 20px;
+}
+
+.content .form p {
+  font-weight: 500;
+  color: hsl(278, 68%, 11%);
+  text-transform: uppercase;
+}
+
+.content .form .card-holder input,
+.content .form .card-number input {
+  width: 360px;
+  padding: 10px 15px;
+}
+
+.content .form input {
+  border: 1px solid hsl(279, 6%, 55%);
+  border-radius: 7px;
+}
+
+.content .form input::placeholder {
+  font-family: "Space Grotesk", system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  color: hsl(279, 6%, 55%);
+}
+
+.content .form .exp-cvc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+}
+
+.content .form .exp-cvc input {
+  width: 80px;
+  padding: 10px 15px;
+  gap: 0 10px;
+}
+
+.content .form .exp-cvc .exp .month-year {
+  display: flex;
+  gap: 0 10px;
+}
+
+.content .form .exp-cvc .cvc input {
+  width: 180px;
+  margin-left: 10px;
+}
+
+.content .form .exp-cvc .cvc p {
+  margin-left: 10px;
+}
+
+button {
+  background-color: hsl(278, 68%, 11%);
+  width: 360px;
+  margin-top: 40px;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-family: "Space Grotesk", system-ui;
+  font-weight: 500;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: hsl(278, 68%, 11%, 0.9);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border: 1px solid hsl(279, 44%, 43%);
+  outline: none;
+}
+
+.field {
+  color: hsl(0, 100%, 66%);
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  display: none;
+}
+
+.cvc {
+  position: relative;
+}
+
+.cvc-to-short {
+  color: hsl(0, 100%, 66%);
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  display: none;
+  position: absolute;
+  right: 0;
+}
+
+.done {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  padding: 20px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.done button {
+  width: 300px;
+  margin: 30px 0 0 0;
+}
+
+.done h2 {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 30px;
+  color: hsl(278, 68%, 11%);
+}
+
+.done p {
+  margin: -20px 0 0 0;
+  color: #777;
+  font-weight: 500;
+}
